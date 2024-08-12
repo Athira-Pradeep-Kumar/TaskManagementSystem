@@ -17,7 +17,7 @@ Getting Started
 Clone the Repository:
 bash
 Copy code
-git clone https://github.com/your-username/TaskManagementSystem.git
+git clone https://github.com/Athira-Pradeep-Kumar/TaskManagementSystem.git
 Setup Database: Update the connection string in Web.config and run Update-Database in the Package Manager Console.
 Run the Application: Start the project in Visual Studio (F5).
 

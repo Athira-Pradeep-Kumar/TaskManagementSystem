@@ -1,0 +1,76 @@
+﻿﻿@model TaskManagementSystem.ViewModel.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<div class="login-box">
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title"><h1><center>Login</center></h1></div>
+                <hr />
+            </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="card-body">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Username)
+                    @Html.TextBoxFor(m => m.Username, "", new { @class = "form-control", @placeholder = "Username" })
+                    @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Login" />
+                </div>
+            </div>
+            </div>
+    }
+    <div style="margin:10px;">
+        Create an  : @Html.ActionLink("SignUp", "Register")
+    </div>
+</div>
+  
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+<style>
+    .login-box {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+    .form-control {
+        width: 500px;
+    }
+
+    .card-body {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
